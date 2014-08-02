@@ -25,19 +25,23 @@ function openPopUp(offer) {
                 var descrption = $("#description").val();
                 var name = $("#name").val();
                 request = $.ajax({
-                    url: "/homepage/homepage/offer",
+                    url: "/homepage/homepage/takeMsg",
                     type: "post",
                     data: "description=" + descrption + "&offer=" + offer + "&name=" + name,
                 });
                 // callback handler that will be called on success
                 request.done(function(response, textStatus, jqXHR) {
-                   //  alert("Jūsu ziņa tika saņemta!");
+                    //  alert("Jūsu ziņa tika saņemta!");
                 });
-               $(this).dialog('close');
+                $(this).dialog('close');
             },
             "Atcelt": function() {
                 $(this).dialog('close');
             }
         }
     });
+    var elem = $(".ui-dialog-buttonset")[0].firstChild;
+    $(elem.firstChild).css("background-color", "#CBE32D !important");
+    $(elem.firstChild).css("border", "0px solid rgba(0, 0, 0, 0.6) !important");
+    $(elem).addClass("btn-shine");
 }

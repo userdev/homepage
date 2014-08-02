@@ -14,6 +14,7 @@ body{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     top: 0;
+    z-index: 1;
 }
 .menu-items{
     margin-left: 200px;
@@ -50,21 +51,21 @@ body{
 footer {
     margin-top: 20px;
     background-color: rgba(0, 0, 0, 0.2);
-    margin-left:150px;
-    margin-right: 150px;
+    margin-left: 150px;
+    margin-right: 120px;
     margin-bottom: 50px;
     height: 110px;
     padding:15px;
-    width: 1010px;
+    width: 1020px;
     text-align: center;
 }
 footer p {
     font-size: small;
-
 }
 footer img {
-    margin-left:8px;
-    margin-right:8px;
+    // margin-left:8px;
+    //  margin-right:25px;
+    // margin-top:10px;
 }
 h1{
     text-transform: uppercase;
@@ -126,6 +127,9 @@ ul li {
     margin-left: 300px;
     margin-top:20px;
     margin-bottom: 20px;
+}
+.bullet-container-text{
+    text-indent:15px;
 }
 .input_container{
     width:900px;
@@ -216,7 +220,7 @@ ul li {
     text-align: left;
 }
 .form-elem{
-    margin:5px;
+    margin-top:5px;
 }
 #contact_msg{
     max-height: 800px;
@@ -297,7 +301,7 @@ input:focus, textarea:focus {
 }
 /* unvisited link */
 a:link {
-    color: #CBE32D;
+    // color: #CBE32D;
     //  text-decoration: none;
 }
 
@@ -322,23 +326,28 @@ a:active {
 .popUp-textarea{
     padding: 9px; 
     font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    color:black;
-    width: 500px; 
-    height: 100px;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.6); /* some kind of blue border */
+    color:white;
+    width: 650px !important;
+    height: 120px !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.8)!important;
     font-size:8pt !important;
 }
 .popUp-input{
     padding: 9px; 
     font: normal 13px/100% Verdana, Tahoma, sans-serif; 
-    color:rgba(0, 0, 0, 0.8);
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.6); /* some kind of blue border */
+    color:white;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.8) !important;
     height: 20px;
     font-size:8pt !important;
+    margin-bottom: 10px;
+    width: 650px; 
 }
-
+.ui-state-default{
+    color:black !important;
+    border: 0 !important;
+}
 .popUp-textarea:hover, .popUp-input:hover, 
 .popUp-textarea:focus, .popUp-input:focus { 
     background-color: white;
@@ -352,7 +361,7 @@ a:active {
 }
 .ui-widget-content{
     background: none!important;
-    background-color: rgba(255, 255, 255, 0.7) !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
     width: 700px !important;
     border:none!important;
 }
@@ -360,3 +369,171 @@ a:active {
     display:none;
 }
 
+.footer-img {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    color: #FFF;
+    position: relative;
+    display:inline-block;
+    margin-right:25px;
+}
+.footer-img-wordpress {
+    background-image: url(../img/wordpress_small.png);
+}
+.footer-img-html5 {
+    background-image: url(../img/html5_small.png);
+    width: 70px;
+    height: 80px;
+    margin-right:28px;
+}
+.footer-img-css3 {
+    background-image: url(../img/css3_small.png);
+    width: 55px;
+    height: 80px;
+    margin-right:25px;
+}
+.footer-img-twitter {
+    background-image: url(../img/twitter_small.png);
+}
+.footer-img-draugiem {
+    background-image: url(../img/draugiem_small.png);
+    width: 68px;
+    height: 70px;
+}
+.footer-img-facebook {
+    background-image: url(../img/facebook_small.png);
+    width: 150px;
+    height: 60px;  
+}
+/* button hover style if required */
+.footer-img:hover {
+
+}
+
+.footer-img-wordpress:after {
+    content: "";
+    position: absolute;
+    top:6px;
+    left: 6px;
+    width: 0%;
+    height: 85%;
+    background-color: rgba(255,255,255,0.1);
+
+}
+.footer-img-html5:after {
+    content: "";
+    position: absolute;
+    top:15px;
+    left: 15px;
+    width: 0%;
+    height: 70%;
+    background-color: rgba(255,255,255,0.1);
+}
+.footer-img-css3:after {
+    content: "";
+    position: absolute;
+    top:16px;
+    left: 8px;
+    width: 0%;
+    height: 75%;
+    background-color: rgba(255,255,255,0.1);
+}
+.footer-img-twitter:after {
+    content: "";
+    position: absolute;
+    top:10px;
+    left: 8px;
+    width: 0%;
+    height: 65%;
+    background-color: rgba(255,255,255,0.2);
+}
+.footer-img-draugiem:after {
+    content: "";
+    position: absolute;
+    top:10px;
+    left: 2px;
+    width: 0%;
+    height: 65%;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.footer-img:hover:after {
+    width: 100%;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.footer-img-twitter:hover:after {
+    width: 100%;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.ui-corner-all {
+    border-top-left-radius: 0 !important;
+}
+.ui-corner-all{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+.ui-widget-header{
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color:white !important;
+}
+.ui-widget-header{
+    border: 0 !important;
+}
+fieldset{
+    border: 0 !important;
+}
+.ui-dialog-titlebar-close{
+    width:15px !important;
+    height:15px !important;
+    background: url("../img/cancel_small.png") !important;
+    border: 0 !important;
+}
+.ui-dialog-title::last-word {
+    color: rgb(203, 227, 45);
+}
+.btn-large{
+    width:520px;
+}
+.btn-shine{
+    position: relative;
+}
+.btn-shine:hover {
+
+}
+.btn-shine:after {
+    content: "";
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.3);
+}
+.btn-shine:hover:after {
+    width: 120%;
+    background-color: rgba(255,255,255,0);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+.ask-form{
+    margin:15px;
+}
+.input-text{
+    height: 20px;
+}

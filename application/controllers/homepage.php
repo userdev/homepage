@@ -39,22 +39,16 @@ class homepage extends CI_Controller {
     }
 
     public function takeMsg() {
-        $this->form_validation->set_rules('name', 'Lietotājvārds', 'trim|required|min_length[3]|max_length[254]|xss_clean');
-        $this->form_validation->set_rules('msg', 'Ziņa', 'trim|required|min_length[3]|max_length[3000]|xss_clean');
+        $this->form_validation->set_rules('name', 'Lietotājvārds', 'trim|max_length[254]|xss_clean');
+        $this->form_validation->set_rules('description', 'Ziņa', 'trim|required|min_length[1]|max_length[3000]|xss_clean');
         if ($this->form_validation->run() === FALSE) {
-            return;
+            redirect('homepage/contact');
         }
-        $name = $this->input->post("name");
-        $msg = $this->input->post("msg");
-        $this->homepage_model->save_msg($name, $msg);
-        redirect('homepage/services');
-    }
-
-    public function offer() {
-        $descrition = $this->input->post("description");
         $offer = $this->input->post("offer");
         $name = $this->input->post("name");
+        $descrition = $this->input->post("description");
         $this->homepage_model->save_msg($name, $descrition, $offer);
+       redirect('homepage/index');
     }
 
 }

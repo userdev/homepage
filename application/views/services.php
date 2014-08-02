@@ -10,7 +10,8 @@
         <div id="bullets_container">
             <div class="cotainer-header">Start</div>
             <div class='bullet-container-text'>
-                <p>Reprezentīva mājaslapa, lai organizācija varētu paziņot par jaunumiem, paklapojumiem, īpašiem piedāvājumiem.
+                <p>Reprezentīva mājaslapa. Pastāv iespēja aprakstīt organizāciju, pakalpojumus, 
+                    pievienot jaunas sadaļas, jaunus rakstus, produku sarakstus,  rakstus un cenas, kontaktu sadaļa.
                     Netiek veidots individuāls dizains.
                     <a href='https://tavspaligs.wordpress.com/'>piemērs</a>  </p>             
             </div>                        
@@ -152,13 +153,14 @@
     </div>
     <div id="bullets_container">
         <div class="cotainer-header">Jautā mums</div>
-        <div class='bullet-container-text'>
-            <form>
-                <div><input placeholder="Vārds, E-pasts" type="text" name="firstname"><br></div>
-                <textarea placeholder="Ziņa"></textarea>
-                <div class="form-elem"><input class="" type="submit" value="Jautāt"></div>
-            </form> 
-        </div>                        
+
+        <form class='ask-form' method="POST" action="<?php echo base_url("homepage/takeMsg"); ?>">
+            <div><input placeholder="Vārds, E-pasts" class="input-text" type="text" name="name"><br></div>
+            <textarea name="description" placeholder="Ziņa"></textarea>
+            <div class="form-elem"><input class="btn-large" type="submit" value="Jautāt"></div>
+        </form> 
+
 
     </div>
+</div>
 </div>

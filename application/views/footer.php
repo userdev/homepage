@@ -1,13 +1,13 @@
 <footer>
-    <img alt="wordpress" src="<?php echo base_url('img/wordpress_small.png'); ?>">
-    <img alt="drupal" src="<?php echo base_url('img/drupal_small.png'); ?>">
-    <img alt="html5" src="<?php echo base_url('img/html5_small.png'); ?>">
-    <img alt="css3" src="<?php echo base_url('img/css3_small.png'); ?>">
-    <img alt="twitter" src="<?php echo base_url('img/twitter_small.png'); ?>">
-    <img alt="draugiem" src="<?php echo base_url('img/draugiem_small.png'); ?>">
-    <img alt="facebook" src="<?php echo base_url('img/facebook_small.png'); ?>">
-    <p>Copyright 2014 by IT pakalpojumi. All Rights Reserved.</p>
-</footer>
+    <div alt="wordpress" class="footer-img footer-img-wordpress" ></div>
+    <div alt="twitter" class="footer-img footer-img-twitter " ></div>
+    <div alt="draugiem.lv" class="footer-img footer-img-draugiem" ></div>
+    <div alt="html5" class="footer-img footer-img-html5" ></div>
+    <div alt="css3" class="footer-img footer-img-css3" ></div>
+    <div alt="facebook" class="footer-img footer-img-facebook" ></div>
+    <p>Copyright 2014 by IT pakalpojumi. All Rights Reserved.</p> 
+</footer> 
+
 
 
 

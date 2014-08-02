@@ -29,7 +29,7 @@
         <div id="bullets_container">
             <div class="cotainer-header">Sociālie tīkli</div>
             <div class='bullet-container-text'>
-                <p>Piedāvājam Jūsu mājaslapā integrēt pēc Jūsu vajadzībām nepieciešamos sociālos tīku spraudņus. Facebook 'Like' poga,
+                <p>Piedāvājam Jūsu mājaslapā integrēt pēc Jūsu vajadzībām nepieciešamos sociālo tīku spraudņus - facebook 'Like' poga,
                     draugiem.lv runā, twitter, google talks u.c.</p>
             </div>                        
         </div>
@@ -55,7 +55,8 @@
         <div id="bullets_container">
             <div class="cotainer-header">Konsūltācijas</div>
             <div class='bullet-container-text'>
-                <p>Sniegsim atbalstu mūsu izsrādātajām sistēmām gan tiko pēc tās uzstādīšanas, gan vēlāk. 
+                <p>Sniegsim konsūltācijas par mūsu izstrādātajām informācijas sitēmām vai veicot analīzi konsūltēsim 
+                    par jau Jums uzstādītajām informācijas sistēmām.
                     Ar prieku izstrādāsim Jūsu informācijas sistēmai paplašinājumus, uzlabojumus.</p>
             </div>                        
         </div>
