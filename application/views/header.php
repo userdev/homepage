@@ -27,7 +27,7 @@
           <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/contact'); ?>"></a>Kontakti</div>
           </div>
           <div class="item <?php if ($selectedPage == "perform") echo "selected-menu-item"; ?>">
-          <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/perform'); ?>"></a>Paveiktais</div>
+          <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/perform'); ?>"></a>Piemēri</div>
           </div
           </div>
           </div>
