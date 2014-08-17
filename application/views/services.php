@@ -3,23 +3,23 @@
         <div id="bullets_container">
             <div class="cotainer-header">Mūsu piedāvājums</div>
             <div class='bullet-container-text'>
-                <p>Piedāvājam dažus iepriekš sagatavotus piedāvājumu piemērus, bet ja neviens neatbilst Jūsu prasībām
-                    neuztrauciesties, raktiet <a href='<?php echo base_url("homepage/contact"); ?>'>mums</a>, mēs izvērtēsim Jūsu vēlmes un noteikti spēsim vienoties.</p>             
+                <p>Tiek piedāvāts iepriekš sagatavoti piedāvājumi, bet ja neviens neatbilst Jūsu prasībām
+                    neuztrauciesties, <a href='<?php echo base_url("homepage/contact"); ?>'>raktiet</a>, mēs izvērtēsim Jūsu vēlmes un noteikti spēsim vienoties.</p>             
             </div>                        
         </div>
         <div id="bullets_container">
             <div class="cotainer-header">Start</div>
             <div class='bullet-container-text'>
-                <p>Reprezentīva mājaslapa. Pastāv iespēja aprakstīt organizāciju, pakalpojumus, 
-                    pievienot jaunas sadaļas, jaunus rakstus, produku sarakstus,  rakstus un cenas, kontaktu sadaļa.
-                    Netiek veidots individuāls dizains.
+                <p>Reprezentīva mājaslapa. Piemēram organizācijas aprakstam, personas CV majaslapa, ir iespēja pievienot sadaļas, piemēram,
+                    pakalpojumu sadaļu, jaunus rakstus, produku sarakstus, cenas un kontaktu sadaļu.
+                    Cenā netiek iekļauts veidot individuālu dizainu.
                     <a href='https://tavspaligs.wordpress.com/'>piemērs</a>  </p>             
             </div>                        
         </div>
         <div id="bullets_container">
             <div class="cotainer-header">Basic</div>
             <div class='bullet-container-text'>
-                <p>Mājaslapa kura ir izstrādāta Jūsu vajadzībām. Individuāla pieeja, iespējams pasūtīt interneta veikalu.</p>             
+                <p>Informācijas sitēma, mājaslapa kura ir izstrādāta Jūsu vajadzībām. Individuāla pieeja, iespējams pasūtīt interneta veikalu.</p>             
             </div>                        
         </div>
         <div id="bullets_container">
@@ -45,6 +45,12 @@
             </tr>
             <tr>
                 <td class="table-name">Satura rediģēšana</td>
+                <td><img alt="Jā" src="<?php echo base_url('img/accept_small_small.png'); ?>"></td>
+                <td><img alt="Jā" src="<?php echo base_url('img/accept_small_small.png'); ?>"></td>
+                <td><img alt="Jā" src="<?php echo base_url('img/accept_small_small.png'); ?>"></td>
+            </tr>
+            <tr>
+                <td class="table-name">Kontakti ar google karti</td>
                 <td><img alt="Jā" src="<?php echo base_url('img/accept_small_small.png'); ?>"></td>
                 <td><img alt="Jā" src="<?php echo base_url('img/accept_small_small.png'); ?>"></td>
                 <td><img alt="Jā" src="<?php echo base_url('img/accept_small_small.png'); ?>"></td>
@@ -143,7 +149,7 @@
         <div id='popUp'>
             <div id="lightbox">  <form>
                     <fieldset>
-                        <input class="popUp-input" id="name" placeholder="Vārds, e-pasts">
+                        <input autocomplete="off" class="popUp-input" id="name" placeholder="Vārds, e-pasts">
                         <textarea class="popUp-textarea" name="description" id="description" placeholder="Apraksts"></textarea>
                         <!-- Allow form submission with keyboard without duplicating the dialog button -->
                         <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
@@ -154,9 +160,10 @@
     <div id="bullets_container">
         <div class="cotainer-header">Jautā mums</div>
 
-        <form class='ask-form' method="POST" action="<?php echo base_url("homepage/takeMsg"); ?>">
-            <div><input placeholder="Vārds, E-pasts" class="input-text" type="text" name="name"><br></div>
-            <textarea name="description" placeholder="Ziņa"></textarea>
+        <form class='ask-form' method="POST" action="<?php echo base_url("homepage/takeMsg"); ?>" accept-charset="utf-8" enctype="multipart/form-data">
+            <div><input autocomplete="off" placeholder="Vārds, E-pasts" class="input-text" type="text" name="name"><br></div>
+            <textarea id="contact_msg_small" name="description" placeholder="Ziņa"></textarea>
+            <input type="file" name="file" id="file">
             <div class="form-elem"><input class="btn-large" type="submit" value="Jautāt"></div>
         </form> 
 

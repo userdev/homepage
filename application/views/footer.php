@@ -14,6 +14,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<?php echo base_url('/scripts/jquery.js'); ?>"></script>
 <script src="<?php echo base_url('/scripts/jquery-ui.js'); ?>"></script>
+<script src="<?php echo base_url('/scripts/jquery.jscroll.min.js'); ?>"></script>
 <script src="<?php echo base_url('/scripts/main.js'); ?>"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 </body>

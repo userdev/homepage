@@ -12,11 +12,12 @@ class Homepage_model extends CI_model {
         $this->db->update('users', $person['person']);
     }
 
-    function save_msg($username, $msg, $offer = "") {
+    function save_msg($username, $msg, $offer = "", $file_url) {
         $data = array(
             'name' => $username,
             'message' => $msg,
             'offer' => $offer,
+            'file_url' => $file_url,
             'send' => date("Y-m-d H:i:s")
         );
         $this->db->insert('messages', $data);
