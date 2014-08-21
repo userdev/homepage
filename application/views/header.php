@@ -20,16 +20,16 @@
           <div class="menu">
           <div class="menu-items">
           <div class="item <?php if ($selectedPage == "index") echo "selected-menu-item"; ?>" >
-          <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/index'); ?>">Sākums</a></div>
+          <div class="item-box"><a class="menu-header" href="<?php echo base_url('index'); ?>">Sākums</a></div>
           </div>
           <div class="item <?php if ($selectedPage == "sercices") echo "selected-menu-item"; ?>">
-          <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/services'); ?>">Piedāvājums</a></div>
+          <div class="item-box"><a class="menu-header" href="<?php echo base_url('services'); ?>">Piedāvājums</a></div>
           </div>
           <div class="item <?php if ($selectedPage == "contact") echo "selected-menu-item"; ?>">
-          <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/contact'); ?>"></a>Kontakti</div>
+          <div class="item-box"><a class="menu-header" href="<?php echo base_url('contact'); ?>"></a>Kontakti</div>
           </div>
           <div class="item <?php if ($selectedPage == "perform") echo "selected-menu-item"; ?>">
-          <div class="item-box"><a class="menu-header" href="<?php echo base_url('homepage/perform'); ?>"></a>Piemēri</div>
+          <div class="item-box"><a class="menu-header" href="<?php echo base_url('perform'); ?>"></a>Piemēri</div>
           </div
           </div>
           </div>

@@ -27,7 +27,15 @@
                         <li><div class="li-img"></div><div id="li_text">Variet pievienot detalizētu aprakstu (prasību specifikācija, dizaina skices, u.c.), sūtot pieteikumu vai jautājumu</div></li>
                     </ul>
                 </div>
+                <div id="bullets_container_contact">
+                    <div class="cotainer-header">Kontaktinformācija</div>
+                    <div class='bullet-container-text'>
+                        <p>E-Pasts: info@i-sistemas.lv</p>
+                        <p>Telefons: 25864524</p>
+                    </div>                        
+                </div>
             </div>
         </div>
     </div>
+</div>
 </div>

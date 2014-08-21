@@ -58,40 +58,110 @@ class homepage extends CI_Controller {
                     ?><a href="<?php echo base_url("samples/$dirs[$folder]/src"); ?>"><img class="sample-img" src="<?php echo base_url("samples/$dirs[$folder]/$elem"); ?>" /></a><?php
                 }
             }
+        }if (count($dirs) != $i) {
+            ?> <div id='show_more' onclick="loadMoreSamples();">Radīt vēl</div><?php
+            }
+        }
+
+        public function takeMsg() {
+            $config['upload_path'] = './uupl/';
+            $config['allowed_types'] = 'gif|jpg|png|doc|docx|rar|zip|pdf|txt|jpeg';
+            $config['max_size'] = '3000';
+            $this->load->library('upload', $config);
+            $this->form_validation->set_rules('name', 'Lietotājvārds', 'trim|max_length[254]|xss_clean');
+            $this->form_validation->set_rules('description', 'Ziņa', 'trim|required|min_length[1]|max_length[3000]|xss_clean');
+            if ($this->form_validation->run() === FALSE) {
+                redirect('homepage/contact');
+            }
+
+            if (!$this->upload->do_upload('file')) {
+                echo $this->upload->display_errors();
+            } else {
+                $upload_data = $this->upload->data();
+                $file_name = $upload_data['file_name'];
+            }
+            $offer = $this->input->post("offer");
+            $name = $this->input->post("name");
+            $descrition = $this->input->post("description");
+            $this->homepage_model->save_msg($name, $descrition, $offer, $file_name);
+            redirect('homepage/index/s');
+        }
+
+        public function cleanFooter() {
+            $dirs = scandir('samples');
+            sort($dirs);
+
+            foreach ($dirs as $dir) {
+                if ($dir == '.' || $dir == '..' || $dir == '.htaccess') {
+                    continue;
+                }
+
+                $siteDir = scandir('samples/' . $dir);
+                $myFooter = "<div id =\"homepage_footer\" 
+                                  style=\"position: fixed; 
+                                          height: 40px; 
+                                          width: 100%; 
+                                          bottom: 0; 
+                                          background: #CBE32D; 
+                                          text-align: center; 
+                                          padding-top: 12px; 
+                                          cursor: pointer;
+                                  font-size:20px;
+                                  z-index:100;\"
+                                  onclick=\"window.open('/homepage/homepage/contact', '_self')\">Pieteikties mājāslapas iztrādei</div>";
+
+                $newFooter = "<div id =\"homepage_footer\" 
+                                  style=\"position: fixed; 
+                                          height: 40px; 
+                                          width: 100%; 
+                                          bottom: 0; 
+                                          background: #CBE32D; 
+                                          text-align: center; 
+                                          padding-top: 12px; 
+                                          cursor: pointer;
+                                  font-size:20px;
+                                  z-index:100;
+                                  color: #565656;
+                                  font-family: \"Trebuchet MS\", Arial, Helvetica, sans-serif;\"
+                                  onclick=\"window.open('/homepage/homepage/contact/$dir', '_self')\">Pieteikties mājāslapas iztrādei</div>";
+
+                foreach ($siteDir as $elem) {
+                    $files = scandir("samples/$dir/src");
+
+                    foreach ($files as $file) {
+                        $ext = pathinfo($file, PATHINFO_EXTENSION);
+                        if ($ext != 'html')
+                            continue;
+                        $current = file_get_contents("samples/$dir/src/$file");
+
+                        if (!strpos($current, "homepage_footer")) {
+                            $this->deleteFooter($current, "homepage_footer", count_chars($myFooter), $newFooter);
+                            $pos = strpos($current, "</body>");
+                            $current = substr_replace($current, $newFooter, $pos, 0);
+                        }
+                        file_put_contents("samples2/$file", $current);
+                    }
+
+                    if ($elem == "img.png" || $elem == "img.jpg" || $elem == "img.jpg") {
+                        ?><a alt="homepage sample" href="<?php echo base_url("samples/$dir/src"); ?>"><img class="sample-img" src="<?php echo base_url("samples/$dir/$elem"); ?>"/></a><?php
+                }
+            }
         }
     }
 
-    public function takeMsg() {
-        $config['upload_path'] = './uupl/';
-        $config['allowed_types'] = 'gif|jpg|png|doc|docx|rar|zip|pdf|txt|jpeg';
-        $config['max_size'] = '3000';
-        $this->load->library('upload', $config);
-        $this->form_validation->set_rules('name', 'Lietotājvārds', 'trim|max_length[254]|xss_clean');
-        $this->form_validation->set_rules('description', 'Ziņa', 'trim|required|min_length[1]|max_length[3000]|xss_clean');
-        print_r($this->upload->do_upload('file'));
-        if ($this->form_validation->run() === FALSE) {
-            redirect('homepage/contact');
+    private function deleteFooter($string, $tag, $currentLen, $newFooter) {
+        if (!strpos($string, $string)) {
+            $start = strpos($string, $tag);
+            substr_replace($string, $newFooter, $start, 451);
         }
-
-        if (!$this->upload->do_upload('file')) {
-            echo $this->upload->display_errors();
-        } else {
-            $upload_data = $this->upload->data();
-            $file_name = $upload_data['file_name'];
-        }
-        $offer = $this->input->post("offer");
-        $name = $this->input->post("name");
-        $descrition = $this->input->post("description");
-        $this->homepage_model->save_msg($name, $descrition, $offer, $file_name);
-        redirect('homepage/index/s');
     }
 
     public function makeFooter() {
         $dirs = scandir('samples');
         sort($dirs);
-        ?> <input type="hidden" id="total_samples" value="<?php echo count($dirs); ?>"><?php
+        ?> <input type="hid den" id="total_samples" value="<?php echo count($dirs); ?>"><?php
             foreach ($dirs as $dir) {
-                if ($dir == '.' || $dir == '..') {
+                if ($dir == '.' || $dir == '..' || $dir == '.htaccess') {
                     continue;
                 }
 
@@ -110,10 +180,12 @@ class homepage extends CI_Controller {
              z-index:100;\" onclick=\"window.open('/homepage/homepage/contact', '_self')\">Pieteikties mājāslapas iztrādei</div>";
 
                 foreach ($siteDir as $elem) {
+
                     $files = scandir("samples/$dir/src");
 
                     foreach ($files as $file) {
-                        $ext = pathinfo($file, PATHINFO_EXTENSION);
+                        $ext = pathinfo(
+                                $file, PATHINFO_EXTENSION);
                         if ($ext != 'html')
                             continue;
                         $current = file_get_contents("samples/$dir/src/$file");

@@ -3,14 +3,14 @@
         <div id="bullets_container">
             <div class="cotainer-header">Mūsu piedāvājums</div>
             <div class='bullet-container-text'>
-                <p>Tiek piedāvāts iepriekš sagatavoti piedāvājumi, bet ja neviens neatbilst Jūsu prasībām
+                <p>Tiek piedāvāts iepriekš sagatavoti piedāvājumi, bet ja neviens neatbilst Jūsu prasībām,
                     neuztrauciesties, <a href='<?php echo base_url("homepage/contact"); ?>'>raktiet</a>, mēs izvērtēsim Jūsu vēlmes un noteikti spēsim vienoties.</p>             
             </div>                        
         </div>
         <div id="bullets_container">
             <div class="cotainer-header">Start</div>
             <div class='bullet-container-text'>
-                <p>Reprezentīva mājaslapa. Piemēram organizācijas aprakstam, personas CV majaslapa, ir iespēja pievienot sadaļas, piemēram,
+                <p>Reprezentīva mājaslapa, piemēram, organizācijas aprakstam, personas CV majaslapa, ir iespēja pievienot sadaļas, piemēram,
                     pakalpojumu sadaļu, jaunus rakstus, produku sarakstus, cenas un kontaktu sadaļu.
                     Cenā netiek iekļauts veidot individuālu dizainu.
                     <a href='https://tavspaligs.wordpress.com/'>piemērs</a>  </p>             
@@ -25,7 +25,7 @@
         <div id="bullets_container">
             <div class="cotainer-header">Advanced</div>
             <div class='bullet-container-text'>
-                <p> Vairākas lietotāju tiesības, visa veida statistikas, Jūsu oragnizācijai pielāgota datu glabātuve, datu analīze, atkaites.
+                <p>Vairākas lietotāju tiesības, visa veida statistikas, Jūsu oragnizācijai pielāgota datu glabātuve, datu analīze, atkaites.
                     Funkcionāli sarežģīti interneta veikali, ārēju sistēmu integrācija.
                 </p>             
             </div>                        
